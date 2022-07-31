@@ -9,6 +9,8 @@ public abstract class TakeableObject : MonoBehaviour
     protected Collider2D Target;
     protected Transform _parent;
 
+    private float _timeTowait = 0.1f;
+
     public Collider2D TakeableObjectTarget => Target;
     private void Start()
     {
@@ -24,10 +26,12 @@ public abstract class TakeableObject : MonoBehaviour
 
     protected IEnumerator OnThrow(Vector3 targetPoint, UnityAction arrived = null)
     {
+        var waitingTime = new WaitForSeconds(_timeTowait);
+
         while (transform.position != targetPoint)
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPoint, 10 * Time.deltaTime);
-            yield return new WaitForFixedUpdate();
+            yield return waitingTime;
         }
 
         Target = null;

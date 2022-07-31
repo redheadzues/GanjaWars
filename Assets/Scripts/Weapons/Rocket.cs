@@ -16,7 +16,6 @@ public class Rocket : Weapon
     private Vector3 _targetLastPosition;
     private Vector2 _direction;
 
-
     private void Update()
     {
         if(_targetLastPosition != Target.transform.position)

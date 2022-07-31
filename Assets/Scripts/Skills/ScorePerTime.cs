@@ -9,14 +9,14 @@ public class ScorePerTime : Skill
     private float _upgradeCost = 250;
     private float _upgradeValue = 0.5f;
 
-    public override void IncreaseSkill(Player player)
+    public override void IncreaseSkill(PlayerSkills skill)
     {
-        player.IncreaseSkill("ScorePerTime", _upgradeValue);
+        skill.IncreaseSkill(scorePerTime:_upgradeValue);
     }
 
-    public override void SetValues(Player player)
+    public override void SetValues(PlayerSkills skill)
     {
-        Value = player.ScorePerTime;
+        Value = skill.ScorePerTime;
         MaxValue = _maxValue;
         Description = _description;
         UpgradeCost = Value * _upgradeCost;

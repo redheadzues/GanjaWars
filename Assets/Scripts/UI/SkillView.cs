@@ -21,10 +21,10 @@ public class SkillView : Bar
         _baseText = _buttonText.text; 
     }
 
-    public void FillSkillTemplate(Skill skill, Player player)
+    public void FillSkillTemplate(Skill skill, PlayerSkills playerSkill)
     {
-        _skill = skill;
-        skill.SetValues(player);
+        this._skill = skill;
+        skill.SetValues(playerSkill);
         _description.text = skill.Description + " " + skill.Value;
         _buttonText.text = _baseText + " " + skill.UpgradeCost.ToString();
         FillSlider(skill.Value, skill.MaxValue);

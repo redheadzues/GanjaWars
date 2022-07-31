@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(Player))]
 [RequireComponent (typeof(ArmoryPlayer))]
+[RequireComponent(typeof(PlayerSkills))]
 public abstract class PlayerControler : MonoBehaviour
 {
     [SerializeField] protected float _takeDistance;
@@ -21,6 +22,7 @@ public abstract class PlayerControler : MonoBehaviour
 
     private GameObject _takenObject;
     private Player _player;
+    private PlayerSkills _skills;
     private ArmoryPlayer _armory;
     private float _speed;
     private float _maxThrowForce;
@@ -36,6 +38,7 @@ public abstract class PlayerControler : MonoBehaviour
     {
         _player = GetComponent<Player>();
         _armory = GetComponent<ArmoryPlayer>();
+        _skills = GetComponent<PlayerSkills>();
     }
 
     private void OnEnable()
@@ -141,8 +144,8 @@ public abstract class PlayerControler : MonoBehaviour
 
     private void ReadCurrentSkillsValue()
     {
-        _maxThrowForce = _player.CurrentStrenght;
-        _speed = _player.CurrentMoveSpeed;
+        _maxThrowForce = _skills.CurrentStrenght;
+        _speed = _skills.CurrentMoveSpeed;
     }
 
     private void SetDirections()

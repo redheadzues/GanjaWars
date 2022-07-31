@@ -9,14 +9,14 @@ public class Strenght : Skill
     private float _upgradeCost = 50;
     private float _upgradeValue = 1;
 
-    public override void IncreaseSkill(Player player)
+    public override void IncreaseSkill(PlayerSkills skill)
     {
-        player.IncreaseSkill("Strenght", _upgradeValue);
+        skill.IncreaseSkill(strenght:_upgradeValue);
     }
 
-    public override void SetValues(Player player)
+    public override void SetValues(PlayerSkills skill)
     {
-        Value = player.SkillStrenght;
+        Value = skill.Strenght;
         MaxValue = _maxValue;
         Description = _description;
         UpgradeCost = Value * _upgradeCost;
