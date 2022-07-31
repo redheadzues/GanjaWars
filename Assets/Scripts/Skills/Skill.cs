@@ -8,7 +8,9 @@ public abstract class Skill : MonoBehaviour
     public float MaxValue { get; protected set; }
     public string Description { get; protected set; }
     public float UpgradeCost { get; protected set; }
+    public float UpgrageValue { get; protected set; }
 
     public abstract void SetValues(PlayerSkills skill);
-    public abstract void IncreaseSkill(PlayerSkills skill);
+    public abstract void Increase(PlayerSkills playerSkills);
+    
 }

@@ -30,7 +30,7 @@ public class UpgradeSkillsPanel : MonoBehaviour
         if(skill.UpgradeCost < _player.Score)
         {
             _player.SpendScore(skill.UpgradeCost);
-            skill.IncreaseSkill(_playerSkill);
+            skill.Increase(_playerSkill);
             view.FillSkillTemplate(skill, _playerSkill);
             
             if(skill.Value == skill.MaxValue)

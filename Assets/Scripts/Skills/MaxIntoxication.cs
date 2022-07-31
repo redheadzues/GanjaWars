@@ -9,10 +9,11 @@ public class MaxIntoxication : Skill
     private float _upgradeCost = 5;
     private float _upgradeValue = 5;
 
-    public override void IncreaseSkill(PlayerSkills skill)
+    public override void Increase(PlayerSkills playerSkills)
     {
-        skill.IncreaseSkill(maxIntoxication:_upgradeValue);
+        playerSkills.IncreaseSkill(this, _upgradeValue);
     }
+
 
     public override void SetValues(PlayerSkills skill)
     {

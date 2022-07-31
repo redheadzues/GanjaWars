@@ -9,10 +9,11 @@ public class ReduceMultiplier : Skill
     private float _upgradeCost = 5000;
     private float _upgradeValue = -0.1f;
 
-    public override void IncreaseSkill(PlayerSkills skill)
+    public override void Increase(PlayerSkills playerSkills)
     {
-        skill.IncreaseSkill(reduceMultiplier:_upgradeValue);
+        playerSkills.IncreaseSkill(this, _upgradeValue);
     }
+
 
     public override void SetValues(PlayerSkills skill)
     {

@@ -23,7 +23,7 @@ public class SkillView : Bar
 
     public void FillSkillTemplate(Skill skill, PlayerSkills playerSkill)
     {
-        this._skill = skill;
+        _skill = skill;
         skill.SetValues(playerSkill);
         _description.text = skill.Description + " " + skill.Value;
         _buttonText.text = _baseText + " " + skill.UpgradeCost.ToString();

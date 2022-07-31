@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,9 +21,6 @@ public class PlayerSkills : MonoBehaviour
     public float ScorePerTime { get; private set; }
     public float MaxIntoxication { get; private set; }
 
-
-
-
     public float CurrentMoveSpeed => _currentSpeed;
     public float CurrentStrenght => _currentStrenght;
 
@@ -35,26 +33,6 @@ public class PlayerSkills : MonoBehaviour
     private void Update()
     {
         CalculateCurrentAbility();
-    }
-
-    public void IncreaseSkill
-        (
-        float speed = 0, 
-        float strenght = 0, 
-        float dodge = 0, 
-        float stamina = 0, 
-        float reduceMultiplier = 0, 
-        float scorePerTime = 0, 
-        float maxIntoxication = 0
-        )
-    {
-        Speed += speed;
-        Strenght += strenght;
-        Dodge += dodge;
-        Stamina += stamina;
-        ReduceMultiplier += reduceMultiplier;
-        ScorePerTime += scorePerTime;
-        MaxIntoxication += maxIntoxication;
     }
 
     private void InitializeSkills()
@@ -75,5 +53,36 @@ public class PlayerSkills : MonoBehaviour
         _currentSpeed = Speed * _abilityReducionMultiplier;
         _currentStrenght = Strenght * _abilityReducionMultiplier;
         _currentChanceDodge = Dodge * _abilityReducionMultiplier;
+    }
+
+    public void IncreaseSkill(Speed speed, float value)
+    {
+        Speed += value;
+    }
+
+    public void IncreaseSkill(Strenght strenght, float value)
+    {
+        Strenght += value;
+    }
+    public void IncreaseSkill(Dodge dodge, float value)
+    {
+        Dodge += value;
+    }
+    public void IncreaseSkill(Stamina stamina, float value)
+    {
+        Stamina += value;
+    }
+
+    public void IncreaseSkill(ReduceMultiplier reduce, float value)
+    {
+        ReduceMultiplier += value;
+    }
+    public void IncreaseSkill(ScorePerTime scorePerTime, float value)
+    {
+        ScorePerTime += value;
+    }
+    public void IncreaseSkill(MaxIntoxication maxIntoxication, float value)
+    {
+        MaxIntoxication += value;
     }
 }

@@ -9,11 +9,10 @@ public class Stamina : Skill
     private float _upgradeCost = 50;
     private float _upgradeValue = 1;
 
-    public override void IncreaseSkill(PlayerSkills skill)
+    public override void Increase(PlayerSkills playerSkills)
     {
-        skill.IncreaseSkill(stamina:_upgradeValue);
+        playerSkills.IncreaseSkill(this, _upgradeValue);
     }
-
     public override void SetValues(PlayerSkills skill)
     {
         Value = skill.Stamina;

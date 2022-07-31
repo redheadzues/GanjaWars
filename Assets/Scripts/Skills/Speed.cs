@@ -9,9 +9,9 @@ public class Speed : Skill
     private float _upgradeCost = 50;
     private float _upgradeValue = 1;
 
-    public override void IncreaseSkill(PlayerSkills skill)
+    public override void Increase(PlayerSkills playerSkills)
     {
-        skill.IncreaseSkill(speed:_upgradeValue);
+        playerSkills.IncreaseSkill(this, _upgradeValue);
     }
 
     public override void SetValues(PlayerSkills skill)
@@ -20,5 +20,6 @@ public class Speed : Skill
         MaxValue = _maxValue;
         Description = _description;
         UpgradeCost = Value * _upgradeCost;
+        UpgrageValue = _upgradeValue;
     }
 }
