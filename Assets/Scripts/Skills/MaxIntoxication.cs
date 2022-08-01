@@ -11,9 +11,8 @@ public class MaxIntoxication : Skill
 
     public override void Increase(PlayerSkills playerSkills)
     {
-        playerSkills.IncreaseSkill(this, _upgradeValue);
+        playerSkills.IncreaseSkill(this);
     }
-
 
     public override void SetValues(PlayerSkills skill)
     {
@@ -21,5 +20,6 @@ public class MaxIntoxication : Skill
         MaxValue = _maxValue;
         Description = _description;
         UpgradeCost = Value * _upgradeCost;
+        UpgrageValue = _upgradeValue;
     }
 }

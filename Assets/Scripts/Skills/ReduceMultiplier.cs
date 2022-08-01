@@ -11,9 +11,8 @@ public class ReduceMultiplier : Skill
 
     public override void Increase(PlayerSkills playerSkills)
     {
-        playerSkills.IncreaseSkill(this, _upgradeValue);
+        playerSkills.IncreaseSkill(this);
     }
-
 
     public override void SetValues(PlayerSkills skill)
     {
@@ -21,5 +20,6 @@ public class ReduceMultiplier : Skill
         MaxValue = _minValue;
         Description = _description;
         UpgradeCost = (1-Value) * _upgradeCost;
+        UpgrageValue = _upgradeValue;
     }
 }

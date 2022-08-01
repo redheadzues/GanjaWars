@@ -11,7 +11,7 @@ public class Stamina : Skill
 
     public override void Increase(PlayerSkills playerSkills)
     {
-        playerSkills.IncreaseSkill(this, _upgradeValue);
+        playerSkills.IncreaseSkill(this);
     }
     public override void SetValues(PlayerSkills skill)
     {
@@ -19,5 +19,6 @@ public class Stamina : Skill
         MaxValue = _maxValue;
         Description = _description;
         UpgradeCost = Value * _upgradeCost;
+        UpgrageValue = _upgradeValue;
     }
 }

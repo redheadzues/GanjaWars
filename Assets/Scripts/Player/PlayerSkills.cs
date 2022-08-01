@@ -55,34 +55,34 @@ public class PlayerSkills : MonoBehaviour
         _currentChanceDodge = Dodge * _abilityReducionMultiplier;
     }
 
-    public void IncreaseSkill(Speed speed, float value)
+    public void IncreaseSkill(Speed speed)
     {
-        Speed += value;
+        Speed += speed.UpgrageValue;
     }
 
-    public void IncreaseSkill(Strenght strenght, float value)
+    public void IncreaseSkill(Strenght strenght)
     {
-        Strenght += value;
+        Strenght += strenght.UpgrageValue;
     }
-    public void IncreaseSkill(Dodge dodge, float value)
+    public void IncreaseSkill(Dodge dodge)
     {
-        Dodge += value;
+        Dodge += dodge.UpgrageValue;
     }
-    public void IncreaseSkill(Stamina stamina, float value)
+    public void IncreaseSkill(Stamina stamina)
     {
-        Stamina += value;
+        Stamina += stamina.UpgrageValue;
     }
 
-    public void IncreaseSkill(ReduceMultiplier reduce, float value)
+    public void IncreaseSkill(ReduceMultiplier reduce)
     {
-        ReduceMultiplier += value;
+        ReduceMultiplier += reduce.UpgrageValue;
     }
-    public void IncreaseSkill(ScorePerTime scorePerTime, float value)
+    public void IncreaseSkill(ScorePerTime scorePerTime)
     {
-        ScorePerTime += value;
+        ScorePerTime += scorePerTime.UpgrageValue;
     }
-    public void IncreaseSkill(MaxIntoxication maxIntoxication, float value)
+    public void IncreaseSkill(MaxIntoxication maxIntoxication)
     {
-        MaxIntoxication += value;
+        MaxIntoxication += maxIntoxication.UpgrageValue;
     }
 }

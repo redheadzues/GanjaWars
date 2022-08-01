@@ -11,7 +11,7 @@ public class Dodge : Skill
 
     public override void Increase(PlayerSkills playerSkills)
     {
-        playerSkills.IncreaseSkill(this, _upgradeValue);
+        playerSkills.IncreaseSkill(this);
     }
 
     public override void SetValues(PlayerSkills skill)
